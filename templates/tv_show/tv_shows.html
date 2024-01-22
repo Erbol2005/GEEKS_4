@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tv_show_list</title>
+</head>
+<body>
+<h1>Список фильмов</h1>
+<ul>
+   {% for i in tv_shows %}
+    <li>
+        <img src="{{ i.image }}" alt="" width="400" height="350">
+        <h2>{{i.title }}</h2>
+        <p>{{i.get_category_display }}</p>
+        <p>{{i.created_at}}</p>
+        <a href="/show_tv_shows/{{i.id}}">Подробнее</a>
+    </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
