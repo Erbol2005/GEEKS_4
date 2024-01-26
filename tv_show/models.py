@@ -17,6 +17,7 @@ class TVShow(models.Model):
 
     def __str__(self):
         return f'{self.name}-{self.category}'
+<<<<<<< HEAD
 
 
 class Review(models.Model):
@@ -25,3 +26,5 @@ class Review(models.Model):
 
     def __str__(self):
         return self.text
+=======
+>>>>>>> 071e9cfa7983c41df8fa0223e0105b965cce1eba
