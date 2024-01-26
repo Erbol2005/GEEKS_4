@@ -1,0 +1,35 @@
+<!-- tv_show/crud/comment.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отзыв</title>
+</head>
+<body>
+
+<h2>Добавить отзыв</h2>
+
+<form method="post" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Добавить отзыв</button>
+</form>
+
+<h3>Отзывы к фильму "{{ review.tv_show.name }}"</h3>
+
+{% if review.tv_show.film_reviews.all %}
+    <ul>
+        {% for film_review in review.tv_show.film_reviews.all %}
+            <li>{{ film_review.text }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Пока нет отзывов. Будьте первым!</p>
+{% endif %}
+
+<a href="/">На главную</a>
+
+</body>
+</html>
