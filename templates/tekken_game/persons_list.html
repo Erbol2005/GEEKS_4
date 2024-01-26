@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>persons_list</title>
+</head>
+<body>
+<h1>Персонажи Текина</h1>
+<ul>
+   {% for i in persons %}
+    <li>
+        <img src="{{i.image}}" alt="">
+        <h2>{{i.name}}</h2>
+        <p>{{i.sport}}</p>
+        <a href="#">Подробнее</a>
+    </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
