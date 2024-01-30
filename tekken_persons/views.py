@@ -8,7 +8,6 @@ def persons_list(request):
         return render(request, template_name='tekken_game/persons_list.html',
                       context={'persons': persons})
 
-
 def persons_detail(request, id):
     if request.method == 'GET':
         person_id = get_object_or_404(models.PersonGame, id=id)
