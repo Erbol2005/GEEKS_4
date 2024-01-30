@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>CreateFilm</title>
-</head>
-<body>
-<h1>Создать Фильм</h1>
-<form action="/create_film/" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Добавить</button>
+{% load static %}
+{% include 'tv_show/header.html' %}
+<link rel="stylesheet" href="{% static 'css/create_form.css' %}">
+
+<form class="decor" action="/create_film/" method="POST" enctype="multipart/form-data">
+    <div class="form-left-decoration"></div>
+    <div class="form-right-decoration"></div>
+    <div class="circle"></div>
+    <div class="form-inner">
+        <h3>Создать Фильм</h3>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Отправить">
+    </div>
 </form>
-</body>
-</html>
+{% include 'tv_show/footer.html' %}

@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% include 'tv_show/header.html' %}
 <img src="{{tv_shows_id.image }}" alt="" width="400" height="350">
 <h1>{{tv_shows_id.name}}</h1>
 <p>{{tv_shows_id.description}}</p>
 <p>{{tv_shows_id.category}}</p>
 <p>{{tv_shows_id.created_at}}</p>
-<<<<<<< HEAD
+
 <ul>
     {% for i in tv_shows_id.film_reviews.all %}
         <li>
@@ -22,9 +16,5 @@
 
 <button><a href="/show_tv_shows/{{tv_shows_id.id}}/update/">Изменить фильм</a></button>
 <button><a href="/show_tv_shows/{{tv_shows_id.id}}/delete/">Удалить фильм</a></button>
-<button><a href="/show_tv_shows/{{tv_shows_id.id}}/review/">Оставить коментарий</a></button>
 <hr>
-=======
->>>>>>> 071e9cfa7983c41df8fa0223e0105b965cce1eba
-</body>
-</html>
+{% include 'tv_show/footer.html' %}

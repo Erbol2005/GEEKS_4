@@ -1,32 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>tv_show_list</title>
-</head>
-<body>
-<h1>Список фильмов</h1>
-<ul>
-<<<<<<< HEAD
-    <hr>
-    <button><a href="/create_film/">Добавить фильм</a></button>
-    <hr>
-=======
->>>>>>> 071e9cfa7983c41df8fa0223e0105b965cce1eba
-   {% for i in tv_shows %}
-    <li>
-        <img src="{{ i.image }}" alt="" width="400" height="350">
-        <h2>{{i.title }}</h2>
-        <p>{{i.get_category_display }}</p>
-        <p>{{i.created_at}}</p>
-        <a href="/show_tv_shows/{{i.id}}">Подробнее</a>
-    </li>
-    {% endfor %}
-<<<<<<< HEAD
+{% load static %}
+{% include 'tv_show/header.html' %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-=======
->>>>>>> 071e9cfa7983c41df8fa0223e0105b965cce1eba
-</ul>
+<div class="horizont-container">
+    <div class="horizont">
+        {% for i in tv_shows %}
+<div class="card" style="width: 18rem;">
+  <img src="{{ i.image }}" class="card-img-top" alt="" width="400" height="350">
+  <div class="card-body">
+    <h5 class="card-title">{{i.title }}</h5>
+    <p class="card-text">{{i.get_category_display }}</p>
+    <a href="/show_tv_shows/{{i.id}}" class="btn btn-primary">Подробнее</a>
+  </div>
+</div>
 
-</body>
-</html>
+    
+{% endfor %}
+        
+    </div>
+</div>
+<br><br><br>
+{% include 'tv_show/footer.html' %}

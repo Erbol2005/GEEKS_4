@@ -49,20 +49,15 @@ def edit_film_view(request, id):
                       context={'form': form,
                                'tv_shows_id': tv_shows_id})
 
-def comment_film_view(request, id):
-    review = get_object_or_404(models.Review, id=id)
-
+def comment_film_view(request):
     if request.method == 'POST':
-        form = forms.TVShowForm(request.POST)
+        form = forms.ReviewForm(request.POST, request.FILES)
         if form.is_valid():
-            review_instance = form.save(commit=False)
-            review_instance.tv_show = review.tv_show
-            review_instance.save()
+            form.save()
             return HttpResponse('Успешно добавлен <a href="/">На главную</a>')
     else:
         form = forms.TVShowForm()
-
-    return render(request,
-                  template_name='tv_show/crud/comment.html',
-                  context={'form': form, 'review': review})
+        return render(request,
+                        template_name='tv_show/crud/comment.html',
+                        context={'form': form})
 
