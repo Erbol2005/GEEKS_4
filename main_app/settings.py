@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'books',
     'tekken_persons',
     'tv_show',
+    'parser_app',
 
 ]
 
